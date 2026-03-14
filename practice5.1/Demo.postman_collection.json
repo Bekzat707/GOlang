@@ -1,0 +1,134 @@
+{
+	"info": {
+		"_postman_id": "771b96a9-0b1a-463d-82c8-8df042aba037",
+		"name": "Golang Practice 5.1 Demo",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "1. Limit & Offset Flow with OrderBy",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8080/users?page=2&pageSize=5&orderBy=name desc",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"users"
+					],
+					"query": [
+						{
+							"key": "page",
+							"value": "2"
+						},
+						{
+							"key": "pageSize",
+							"value": "5"
+						},
+						{
+							"key": "orderBy",
+							"value": "name desc"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "2. Filtering based on ID, Name, Email",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8080/users?name=User1&email=example",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"users"
+					],
+					"query": [
+						{
+							"key": "name",
+							"value": "User1"
+						},
+						{
+							"key": "email",
+							"value": "example"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "3. Filtering on 3 random fields with Limit/Offset/OrderBy",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8080/users?gender=Female&name=User&page=1&pageSize=3&orderBy=birth_date desc",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"users"
+					],
+					"query": [
+						{
+							"key": "gender",
+							"value": "Female"
+						},
+						{
+							"key": "name",
+							"value": "User"
+						},
+						{
+							"key": "page",
+							"value": "1"
+						},
+						{
+							"key": "pageSize",
+							"value": "3"
+						},
+						{
+							"key": "orderBy",
+							"value": "birth_date desc"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "4. GetCommonFriends (Replace IDs manually from Request 1)",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8080/users/REPLACE_WITH_USER1_ID/common-friends/REPLACE_WITH_USER2_ID",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"users",
+						"REPLACE_WITH_USER1_ID",
+						"common-friends",
+						"REPLACE_WITH_USER2_ID"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}
